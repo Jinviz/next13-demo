@@ -3,7 +3,7 @@ import CreatePost from "./CreatePost";
 
 async function getPosts() {
     const res = await fetch('http://127.0.0.1:8090/api/collections/posts/records'
-    );
+    , {cache: 'no-store'});
 
     const data = await res.json();
     return data?.items as any[];
